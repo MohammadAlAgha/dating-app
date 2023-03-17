@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('age');
             $table->string('gender');
+            $table->string('location');
             $table->string('pic')->nullable();
             $table->timestamps();
         });
