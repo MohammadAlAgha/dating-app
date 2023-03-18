@@ -17,3 +17,4 @@ Route::controller(AuthController::class)->group(function () {
 Route::get('/{id}',[UserController::class,'getUser']);
 Route::get('/',[UserController::class,'getUsers']);
 Route::post('/messages',[MessageController::class,'SendMessage']);
+Route::post('/chat',[MessageController::class,'GetMessage']);

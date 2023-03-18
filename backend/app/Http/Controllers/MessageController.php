@@ -17,6 +17,12 @@ class MessageController extends Controller
             "Message" => $message,
             'status'=>'Message is sent'
         ]);
-
+    }
+    public function GetMessage(Request $request){
+        $message = Message::where("sender_id",$request->sender_id)
+        ->where("receiver_id",$request->receiver_id)->get();
+        return response()->json([
+            "Message" => $message,
+        ]);
     }
 }
