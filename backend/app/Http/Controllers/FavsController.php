@@ -10,14 +10,16 @@ use App\Models\Fav;
 
 class FavsController extends Controller
 {
-    function setFav($sender_id,$fav_id){
-        DB::table('favs')->insert([
-            'sender_id' => $sender_id,
-            'fav_id' => $fav_id,
-        ]);
-                return response()->json([
-            "status"=>'Saved in favourite'
-        ]);
+        public function setFav(Request $request){
+            $sender_id = $request->input('sender_id');
+            $fav_id = $request->input('fav_id');
+            $data=array('sender_id'=>$sender_id,"fav_id"=>$fav_id);
+            DB::table('favs')->insert($data);
+        
+            return response()->json([
+                "status"=>'Saved in favourite'
+            ]);
+        }
     }
 
     function getFav($sender_id){
@@ -32,4 +34,4 @@ class FavsController extends Controller
 
 
 
-}
+// }
