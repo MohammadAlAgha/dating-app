@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('favs', function (Blueprint $table) {
             $table->foreignId('sender_id')->constrained('id')->on('users');
             $table->foreignId('fav_id')->constrained('id')->on('users');
+            $table->timeStamps();
         });
     }
 

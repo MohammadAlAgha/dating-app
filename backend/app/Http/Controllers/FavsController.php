@@ -11,14 +11,35 @@ use App\Models\Favs;
 class FavsController extends Controller
 {
         public function setFav(Request $request){
-            $sender_id = $request->input('sender_id');
-            $fav_id = $request->input('fav_id');
-            $data=array('sender_id'=>$sender_id,"fav_id"=>$fav_id);
-            DB::table('favs')->insert($data);
+            $sender_id = $request->sender_id;
+            $fav_id = $request->fav_id;
+
+            $fav = Favs::where("sender_id",$sender_id)
+                        ->where("fav_id",$fav_id)
+                        ->get();
+
+            if($fav->count() == 0){
+                $fav=Favs::create([
+                    "sender_id"=>$sender_id,
+                    "fav_id"=>$fav_id
+                ]);
+
+                $fav->save();
+
+                return response()->json([
+                    "status"=>'Saved in favourite'
+                ]);
+            } else {
+                Favs::where("sender_id",$sender_id)
+                    ->where("fav_id",$fav_id)
+                    ->delete();
+
+                return response()->json([
+                    "status"=>'deleted from favourite'
+                ]);
+            }
+
         
-            return response()->json([
-                "status"=>'Saved in favourite'
-            ]);
         }
     
 
