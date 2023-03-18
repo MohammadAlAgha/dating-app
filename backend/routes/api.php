@@ -21,6 +21,6 @@ Route::get('/',[UserController::class,'getUsers']);
 Route::post('/messages',[MessageController::class,'SendMessage']);
 Route::post('/chat',[MessageController::class,'GetMessage']);
 Route::post('/setfav',[FavsController::class,'setFav']);
-Route::get('/getfav/{sender_id}',[FavsController::class,'getFav']);
+Route::post('/getFav',[FavsController::class,'getFav']);
 Route::post('/setBlock',[BlocksController::class,'setBlock']);
-Route::get('/getBlock/{sender_id}',[BlocksController::class,'getBlock']);
+Route::post('/getBlock',[BlocksController::class,'getBlock']);

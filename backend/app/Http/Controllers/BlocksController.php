@@ -3,22 +3,25 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Blocks;
 
 class BlocksController extends Controller
 {
         public function setBlock(Request $request){
-            $sender_id = $request->input('sender_id');
-            $blocked_id = $request->input('blocked_id');
-            $data=array('sender_id'=>$sender_id,"blocked_id"=>$blocked_id);
-            DB::table('blocks')->insert($data);
+            $block = Blocks::create([
+                "sender_id" => $request->sender_id,
+                "blocked_id" => $request->blocked_id
+            ]);
         
             return response()->json([
                 "status"=>'User is blocked'
             ]);
         }
 
-    function getBlock($sender_id){
-        $block=Blocks::find($sender_id);
+    function getBlock(Request $request){
+        $block=Blocks::where("sender_id",$request->sender_id)
+                        ->get();
+
         return response()->json([
             'blocks'=>$block
         ]);

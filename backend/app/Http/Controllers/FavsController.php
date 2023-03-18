@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Models\Fav;
+use App\Models\Favs;
 
 
 
@@ -20,18 +20,22 @@ class FavsController extends Controller
                 "status"=>'Saved in favourite'
             ]);
         }
-    }
+    
 
-    function getFav($sender_id){
-        $fav=Favs::find($sender_id);
+    function getFav(Request $request){
+        $favs=Favs::where("sender_id",$request->sender_id)
+                        ->get();
+
         return response()->json([
-            'favs'=>$fav
+            'favs'=>$favs
         ]);
     }
+
+
     function noteFav($sender_id,$fav_id){
 
     }
 
-
+}
 
 // }
