@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MessageController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -11,8 +12,8 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('logout', 'logout');
     Route::post('refresh', 'refresh');
     Route::get('me', 'me');
-
 });
 
 Route::get('/{id}',[UserController::class,'getUser']);
 Route::get('/',[UserController::class,'getUsers']);
+Route::post('/messages',[MessageController::class,'SendMessage']);
