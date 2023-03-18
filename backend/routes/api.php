@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\FavsController;
 use App\Http\Controllers\BlocksController;
+use App\Http\Controllers\InfoController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -24,3 +25,4 @@ Route::post('/setfav',[FavsController::class,'setFav']);
 Route::post('/getFav',[FavsController::class,'getFav']);
 Route::post('/setBlock',[BlocksController::class,'setBlock']);
 Route::post('/getBlock',[BlocksController::class,'getBlock']);
+Route::post('/info',[InfoController::class,'profile']);

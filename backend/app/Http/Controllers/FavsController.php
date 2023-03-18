@@ -6,8 +6,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Favs;
 
-
-
 class FavsController extends Controller
 {
         public function setFav(Request $request){
@@ -41,8 +39,6 @@ class FavsController extends Controller
 
         
         }
-    
-
     function getFav(Request $request){
         $favs=Favs::where("sender_id",$request->sender_id)
                         ->get();
@@ -51,10 +47,7 @@ class FavsController extends Controller
             'favs'=>$favs
         ]);
     }
-
-
     function noteFav($sender_id,$fav_id){
-
     }
 
 }

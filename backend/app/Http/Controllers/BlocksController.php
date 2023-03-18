@@ -32,7 +32,6 @@ class BlocksController extends Controller
                 return response()->json([
                     'state'=>'User is unblocked'
                 ]);
-            
             }
         }
 
@@ -44,8 +43,7 @@ class BlocksController extends Controller
             'blocks'=>$block
         ]);
     }
-    function noteBlock($sender_id,$block_id){
-        
+    function noteBlock($sender_id,$block_id){  
     }
 
 }

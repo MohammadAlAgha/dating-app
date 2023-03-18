@@ -13,4 +13,16 @@ class InfoController extends Controller
             'info'=>$info
         ]);   
     }
+
+    function profile(Request $request){
+        $bio=$request->bio;
+        $id=$request->id;
+        $affected = Info::where('id', $id)
+              ->update(['bio' => $bio]);
+
+        return response()->json([
+            'state'=>'Bio updated'
+        ]);
+        
+    }
 }
