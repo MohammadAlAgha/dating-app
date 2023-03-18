@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\FavsController;
+use App\Http\Controllers\BlocksController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -18,3 +20,7 @@ Route::get('/{id}',[UserController::class,'getUser']);
 Route::get('/',[UserController::class,'getUsers']);
 Route::post('/messages',[MessageController::class,'SendMessage']);
 Route::post('/chat',[MessageController::class,'GetMessage']);
+Route::get('/setfav/{sender_id}/{fav_id}',[FavsController::class,'setFav']);
+Route::get('/getfav/{sender_id}',[FavsController::class,'getFav']);
+Route::get('/setBlock/{sender_id}/{blocked_id}',[BlocksController::class,'setBlock']);
+Route::get('/getBlock/{sender_id}',[BlocksController::class,'getBlock']);
