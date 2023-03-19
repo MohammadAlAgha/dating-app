@@ -14,9 +14,16 @@
 }
 
 .header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.title {
+  width: 60%;
   display: flex;
   justify-content: start;
-  padding: 10px;
 }
 
 h1 {
@@ -33,11 +40,12 @@ hr {
 }
 
 .message {
-  padding: 10px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
-  height: 20vh;
+  height: 25vh;
   border-bottom: 1px solid rgb(230, 0, 0);
+  margin: 20px 0;
 }
 
 .info {
