@@ -91,3 +91,13 @@ a {
 .hide {
   display: none;
 }
+
+.state {
+  color: red;
+  font-weight: 900;
+}
+
+.stateSignUp {
+  color: red;
+  font-weight: 900;
+}
