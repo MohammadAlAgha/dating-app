@@ -4,6 +4,19 @@
   justify-content: space-around;
 }
 
+.intro {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  margin-left: 10px;
+  background: -webkit-linear-gradient(180deg, rgb(230, 0, 0), rgb(255, 92, 28));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 35px;
+}
+
 .card {
   width: 25%;
   border: 0.5px rgb(230, 0, 0) solid;
