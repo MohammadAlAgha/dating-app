@@ -1,0 +1,59 @@
+.feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width: 25%;
+  border: 0.5px rgb(230, 0, 0) solid;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile > img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
+
+.buttons > button {
+  width: 40%;
+  padding: 5px;
+  font-size: 13px;
+}
+
+.profile {
+  height: 50%;
+  width: 100%;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(230, 0, 0);
+}
+
+.info {
+  height: 13%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+}
