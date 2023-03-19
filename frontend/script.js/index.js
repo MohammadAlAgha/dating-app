@@ -90,7 +90,20 @@ changeToSignUp.addEventListener("click", (e) => {
     ) {
       stateSignUp.innerHTML = "Please Enter All The Required Fields!!!";
     } else {
-      console.log("success");
+      const body = new FormData();
+      body.append("name", user_name.value);
+      body.append("email", email.value);
+      body.append("password", password.value);
+      body.append("age", age.value);
+      body.append("gender", selected);
+      body.append("location", location.value);
+      axios({
+        method: "POST",
+        url: "http://localhost:8000/api/register",
+        data: body,
+      }).then((res) => {
+        console.log(res);
+      });
       stateSignUp.innerHTML = "";
     }
   });
