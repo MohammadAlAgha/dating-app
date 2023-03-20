@@ -61,11 +61,6 @@ hr {
   margin-right: 20px;
 }
 
-.time {
-  display: flex;
-  align-items: center;
-}
-
 .info > p {
   color: rgb(230, 0, 0);
   font-size: 30px;

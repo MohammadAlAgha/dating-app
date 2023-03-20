@@ -44,6 +44,7 @@ hr {
 .wrapper {
   display: flex;
   justify-content: space-around;
+  border-bottom: 1px solid rgb(230, 0, 0);
 }
 
 .main {
@@ -159,4 +160,56 @@ input {
 
 .mainFile {
   margin-bottom: 15px;
+}
+
+.block {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  height: 25vh;
+  border-bottom: 1px solid rgb(230, 0, 0);
+  margin: 20px 0;
+}
+
+.info {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.info > img {
+  object-fit: cover;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.unblock {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.unblock > button {
+  width: 20%;
+}
+
+.info > p {
+  color: rgb(230, 0, 0);
+  font-size: 30px;
+}
+
+.titleBlock {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.titleBlock > img {
+  width: 5%;
+}
+
+.blockedWrapper {
+  margin-top: 100px;
 }
