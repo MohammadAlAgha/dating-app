@@ -18,10 +18,12 @@ profile.addEventListener("click", () => {
 userNow = JSON.parse(localStorage.getItem("User Now"));
 userToken = JSON.parse(localStorage.getItem("User token"));
 
-axios.get(`http://localhost:8000/api/users/${userNow.id}`).then((res) => {
-  const feedUsers = res.data.users;
-  feedUsers.forEach((user) => {
-    feed.innerHTML += `<div class="card">
+axios
+  .get(`http://localhost:8000/api/users/${userNow.id}`)
+  .then((res) => {
+    const feedUsers = res.data.users;
+    feedUsers.forEach((user) => {
+      feed.innerHTML += `<div class="card" value="${user.id}" id="card">
   <div class="profile">
     <img src="./assets/profile.webp" alt="" />
   </div>
@@ -35,5 +37,16 @@ axios.get(`http://localhost:8000/api/users/${userNow.id}`).then((res) => {
     <button>Message</button>
   </div>
 </div>`;
+    });
+  })
+  .then(() => {
+    const card = document.querySelectorAll("#card");
+
+    card.forEach((users) => {
+      users.addEventListener("click", () => {
+        const value = users.getAttribute("value");
+        localStorage.setItem("viewID", JSON.stringify(value));
+        window.location.href = "./viewUser.html";
+      });
+    });
   });
-});
