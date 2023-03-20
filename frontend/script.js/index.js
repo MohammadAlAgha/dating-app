@@ -22,7 +22,14 @@ submit.addEventListener("click", (e) => {
       url: "http://localhost:8000/api/login",
       data: body,
     }).then((res) => {
-      console.log(res);
+      user = res.data.user;
+      approved = res.data.status;
+      token = res.data.authorisation;
+      if (approved == "success") {
+        localStorage.setItem("User Now", JSON.stringify(user));
+        localStorage.setItem("User token", JSON.stringify(token));
+        window.location.href = "./feed.html";
+      }
     });
     state.innerHTML = "";
   }
@@ -51,7 +58,14 @@ changeToLogin.addEventListener("click", (e) => {
         url: "http://localhost:8000/api/login",
         data: body,
       }).then((res) => {
-        console.log(res);
+        user = res.data.user;
+        approved = res.data.status;
+        token = res.data.authorisation;
+        if (approved == "success") {
+          localStorage.setItem("User Now", JSON.stringify(user));
+          localStorage.setItem("User token", JSON.stringify(token));
+          window.location.href = "./feed.html";
+        }
       });
       state.innerHTML = "";
     }
@@ -102,7 +116,14 @@ changeToSignUp.addEventListener("click", (e) => {
         url: "http://localhost:8000/api/register",
         data: body,
       }).then((res) => {
-        console.log(res);
+        user = res.data.user;
+        approved = res.data.status;
+        token = res.data.authorisation;
+        if (approved == "success") {
+          localStorage.setItem("User Now", JSON.stringify(user));
+          localStorage.setItem("User token", JSON.stringify(token));
+          window.location.href = "./feed.html";
+        }
       });
       stateSignUp.innerHTML = "";
     }
