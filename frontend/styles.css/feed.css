@@ -44,13 +44,19 @@ h1 {
 .buttons {
   display: flex;
   justify-content: space-around;
-  width: 90%;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 20%;
 }
 
 .buttons > button {
-  width: 40%;
-  padding: 5px;
+  width: 35%;
+  height: 40%;
+  padding: 10px;
   font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile {

@@ -11,7 +11,6 @@ class FavsController extends Controller
         public function setFav(Request $request){
             $sender_id = $request->sender_id;
             $fav_id = $request->fav_id;
-
             $fav = Favs::where("sender_id",$sender_id)
                         ->where("fav_id",$fav_id)
                         ->get();
@@ -33,7 +32,7 @@ class FavsController extends Controller
                     ->delete();
 
                 return response()->json([
-                    "status"=>'deleted from favourite'
+                    "status"=>'Deleted from favourite'
                 ]);
             }
 
