@@ -8,8 +8,7 @@ use App\Models\User;
 class UserController extends Controller
 {
     function GetUser($id){
-        $user = User::join('info', 'users.id', '=', 'info.user_id')
-        ->get(['users.*', 'info.bio']);
+        $user = User::find($id);
         return response()->json([
             "user" => $user
         ]);
