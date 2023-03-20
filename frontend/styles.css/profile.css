@@ -213,3 +213,15 @@ input {
 .blockedWrapper {
   margin-top: 130px;
 }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions > button {
+  width: 30%;
+  margin: 5px;
+}
