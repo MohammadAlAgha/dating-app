@@ -107,7 +107,7 @@ hr {
 }
 p {
   font-weight: 700;
-  font-size: 30px;
+  font-size: 23px;
   background: -webkit-linear-gradient(180deg, rgb(230, 0, 0), rgb(255, 92, 28));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
