@@ -1,11 +1,11 @@
 const back = document.getElementById("back");
-const text = document.getElementById("message");
+// const text = document.getElementById("message");
 const send = document.getElementById("send");
 const dm = document.getElementById("dm");
 const receiver = document.getElementById("receiver");
 
 back.addEventListener("click", () => {
-  window.location.href = "./message.html";
+  window.location.href = "./feed.html";
 });
 
 const sender = JSON.parse(localStorage.getItem("User Now"));

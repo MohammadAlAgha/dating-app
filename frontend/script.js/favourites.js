@@ -1,5 +1,5 @@
 const GoHome = document.getElementById("GoHome");
-const GoInbox = document.getElementById("GoInbox");
+// const GoInbox = document.getElementById("GoInbox");
 const profile = document.getElementById("profile");
 const feed = document.getElementById("feed");
 
@@ -7,9 +7,9 @@ GoHome.addEventListener("click", () => {
   window.location.href = "./feed.html";
 });
 
-GoInbox.addEventListener("click", () => {
-  window.location.href = "./message.html";
-});
+// GoInbox.addEventListener("click", () => {
+//   window.location.href = "./message.html";
+// });
 
 profile.addEventListener("click", () => {
   window.location.href = "./profile.html";
