@@ -22,8 +22,8 @@ submit.addEventListener("click", (e) => {
       url: "http://localhost:8000/api/login",
       data: body,
     }).then((res) => {
-      user = res.data.user;
-      approved = res.data.status;
+      const user = res.data.user;
+      const approved = res.data.status;
       token = res.data.authorisation;
       if (approved == "success") {
         localStorage.setItem("User Now", JSON.stringify(user));
@@ -58,8 +58,8 @@ changeToLogin.addEventListener("click", (e) => {
         url: "http://localhost:8000/api/login",
         data: body,
       }).then((res) => {
-        user = res.data.user;
-        approved = res.data.status;
+        const user = res.data.user;
+        const approved = res.data.status;
         token = res.data.authorisation;
         if (approved == "success") {
           localStorage.setItem("User Now", JSON.stringify(user));
@@ -116,8 +116,8 @@ changeToSignUp.addEventListener("click", (e) => {
         url: "http://localhost:8000/api/register",
         data: body,
       }).then((res) => {
-        user = res.data.user;
-        approved = res.data.status;
+        const user = res.data.user;
+        const approved = res.data.status;
         token = res.data.authorisation;
         if (approved == "success") {
           localStorage.setItem("User Now", JSON.stringify(user));
