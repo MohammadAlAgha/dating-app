@@ -25,4 +25,5 @@ Route::post('/setfav',[FavsController::class,'setFav']);
 Route::post('/getFav',[FavsController::class,'getFav']);
 Route::post('/setBlock',[BlocksController::class,'setBlock']);
 Route::post('/getBlock',[BlocksController::class,'getBlock']);
+Route::get('/info/{id}',[InfoController::class,'getInfo']);
 Route::post('/info',[InfoController::class,'profile']);

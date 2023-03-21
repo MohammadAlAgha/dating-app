@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Info extends Model
 {
+    protected $table = 'info';
     protected $fillable=[
-        'location',
+        'user_id',
         'bio',
         'pic1',
         'pic2',
