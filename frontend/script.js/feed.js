@@ -43,7 +43,7 @@ axios
         body.append("sender_id", userNow.id);
         body.append("fav_id", value);
         axios.post("http://localhost:8000/api/setfav", body).then((res) => {
-          console.log(res);
+          favourite.innerHTML = res.data.status;
         });
       });
     });
