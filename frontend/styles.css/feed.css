@@ -4,6 +4,9 @@
   justify-content: space-around;
 }
 
+body {
+  background-color: rgb(20, 20, 20);
+}
 .intro {
   display: flex;
   align-items: center;
@@ -81,6 +84,7 @@ h1 {
   align-items: center;
   font-size: 15px;
   font-weight: 700;
+  color: aliceblue;
 }
 
 /* <div class="card">

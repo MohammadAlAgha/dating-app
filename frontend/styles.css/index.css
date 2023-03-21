@@ -54,7 +54,7 @@ button:active {
 }
 
 a {
-  color: rgb(230, 0, 0);
+  color: rgb(255, 92, 28);
   font-size: 15px;
 }
 
@@ -100,4 +100,8 @@ a {
 .stateSignUp {
   color: red;
   font-weight: 900;
+}
+
+label {
+  color: aliceblue;
 }
