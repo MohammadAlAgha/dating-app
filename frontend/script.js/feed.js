@@ -2,11 +2,16 @@ const GoFav = document.getElementById("GoFav");
 const profile = document.getElementById("profile");
 const feed = document.getElementById("feed");
 const search = document.getElementById("search");
-const filterBtn = document.getElementById("filterBtn");
 const filter = document.getElementById("filter");
+const logOut = document.getElementById("logOut");
 
 GoFav.addEventListener("click", () => {
   window.location.href = "./favourites.html";
+});
+
+logOut.addEventListener("click", () => {
+  window.location.href = "./index.html";
+  localStorage.clear();
 });
 
 profile.addEventListener("click", () => {
@@ -68,15 +73,59 @@ axios
       });
     });
 
-    filter.addEventListener("change", (event) => {
-      console.log(event.target.value);
-    });
+    //   filter.addEventListener("change", (event) => {
+    //     const choice = event.target.value;
+    //     console.log(choice);
+    //     if (choice == 23) {
+    //       const allCards = document.querySelectorAll(".card");
+    //       allCards.forEach((one) => {
+    //         one.classList.remove("hide");
+    //         const value = one.getAttribute("value");
+    //         if (value < choice) {
+    //           one.classList.add("hide");
+    //         }
+    //       });
+    //     }
+    //     console.log(choice);
+    //     if (choice == "Lebanon") {
+    //       const allCards = document.querySelectorAll(".card");
+    //       allCards.forEach((one) => {
+    //         one.classList.remove("hide");
+    //         const value = one.getAttribute("value");
+    //         if (!value.includes(choice)) {
+    //           one.classList.add("hide");
+    //         }
+    //       });
+    //     }
+    //     console.log(choice);
+    //     if (choice == "Germany") {
+    //       const allCards = document.querySelectorAll(".card");
+    //       allCards.forEach((one) => {
+    //         one.classList.remove("hide");
+    //         const value = one.getAttribute("value");
+    //         if (!value.includes(choice)) {
+    //           one.classList.add("hide");
+    //         }
+    //       });
+    //     }
+    //     console.log(choice);
+    //     if (choice == "France") {
+    //       const allCards = document.querySelectorAll(".card");
+    //       allCards.forEach((one) => {
+    //         one.classList.remove("hide");
+    //         const value = one.getAttribute("value");
+    //         if (!value.includes(choice)) {
+    //           one.classList.add("hide");
+    //         }
+    //       });
+    //     }
+    //   });
   });
 
 const loadUsers = (users, wrapper) => {
   wrapper.innerHTML = "";
   users.forEach((user) => {
-    wrapper.innerHTML += `<div class="card" value='${user.name.toLowerCase()} ${user.location.toLowerCase()} ${
+    wrapper.innerHTML += `<div class="card" value=' ${user.location.toLowerCase()} ${user.name.toLowerCase()} ${
       user.age
     }' >
   <div class="profile">
