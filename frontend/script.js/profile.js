@@ -25,7 +25,7 @@ axios.get(`http://localhost:8000/api/${sender_id}`).then((res) => {
 });
 
 axios.get(`http://localhost:8000/api/info/${sender_id}`).then((res) => {
-  data = res.data.info;
+  const data = res.data.info;
   extra.innerHTML = ` <div class="bio">
   <p id="bioText">
     BIO:${data.bio}
@@ -54,14 +54,12 @@ axios.get(`http://localhost:8000/api/info/${sender_id}`).then((res) => {
   const editBio = document.getElementById("bio");
   const submitChange = document.getElementById("submitChange");
 
-  console.log(bio);
-  console.log(submitChange);
-
   submitChange.addEventListener("click", () => {
     const body = new FormData();
-    body.append("user_id", sender_id);
+    body.append("id", sender_id);
     body.append("bio", editBio.value);
-    axios.post(`http://localhost:8000/api/info`, body).then(() => {
+    axios.post(`http://localhost:8000/api/info`, body).then((res) => {
+      console.log(res);
       const bioText = document.getElementById("bioText");
       bioText.innerHTML = `BIO:${editBio.value}`;
     });
