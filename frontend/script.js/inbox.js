@@ -1,5 +1,4 @@
 const back = document.getElementById("back");
-// const text = document.getElementById("message");
 const send = document.getElementById("send");
 const dm = document.getElementById("dm");
 const receiver = document.getElementById("receiver");
