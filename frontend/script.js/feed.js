@@ -2,6 +2,8 @@ const GoFav = document.getElementById("GoFav");
 const profile = document.getElementById("profile");
 const feed = document.getElementById("feed");
 const search = document.getElementById("search");
+const filterBtn = document.getElementById("filterBtn");
+const filter = document.getElementById("filter");
 
 GoFav.addEventListener("click", () => {
   window.location.href = "./favourites.html";
@@ -65,12 +67,18 @@ axios
         }
       });
     });
+
+    filter.addEventListener("change", (event) => {
+      console.log(event.target.value);
+    });
   });
 
 const loadUsers = (users, wrapper) => {
   wrapper.innerHTML = "";
   users.forEach((user) => {
-    wrapper.innerHTML += `<div class="card" value='${user.name.toLowerCase()}' >
+    wrapper.innerHTML += `<div class="card" value='${user.name.toLowerCase()} ${user.location.toLowerCase()} ${
+      user.age
+    }' >
   <div class="profile">
     <img src="./assets/profile.webp" alt="" />
   </div>
