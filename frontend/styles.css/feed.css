@@ -73,7 +73,9 @@ h1 {
   align-items: center;
   font-size: 20px;
   font-weight: 700;
-  color: rgb(230, 0, 0);
+  background: -webkit-linear-gradient(180deg, rgb(230, 0, 0), rgb(255, 92, 28));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .info {
@@ -85,6 +87,10 @@ h1 {
   font-size: 15px;
   font-weight: 700;
   color: aliceblue;
+}
+
+.hide {
+  display: none;
 }
 
 /* <div class="card">
